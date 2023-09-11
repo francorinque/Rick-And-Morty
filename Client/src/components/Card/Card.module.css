@@ -1,0 +1,41 @@
+.card {
+	width: 100%;
+	height: 100%;
+	border-radius: var(--radius);
+	display: grid;
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--radius);
+}
+
+.img {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: var(--radius);
+}
+
+.top {
+	display: flex;
+	align-items: start;
+	justify-content: space-between;
+	position: absolute;
+	padding: 7px;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+.name {
+	font-size: 14px;
+	color: var(--clr-text);
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 20px 0;
+	text-align: center;
+	background-color: var(--hover);
+}

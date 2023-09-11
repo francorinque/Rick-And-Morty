@@ -1,0 +1,39 @@
+.container {
+	width: min(95%, 800px);
+	margin-inline: auto;
+	background-color: var(--clr-bg-2);
+	border-radius: var(--radius);
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	gap: 20px;
+}
+
+.text {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.text b {
+	color: var(--clr-accent);
+}
+
+.imgWrapper {
+	height: 400px;
+	border-radius: var(--radius);
+}
+
+.loader {
+	text-align: center;
+}
+
+@media (min-width: 900px) {
+	.container {
+		flex-direction: row;
+		gap: 50px;
+		align-items: center;
+	}
+}

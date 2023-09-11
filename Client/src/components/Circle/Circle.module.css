@@ -1,0 +1,20 @@
+.circle {
+	width: 200px;
+	height: 200px;
+	background-color: var(--white);
+	border-radius: 50%;
+	filter: blur(100px);
+	opacity: 10%;
+	position: absolute;
+
+	z-index: 98;
+}
+
+.positionLeft {
+	top: 0;
+	left: 0;
+}
+.positionRight {
+	bottom: 0;
+	right: 0;
+}

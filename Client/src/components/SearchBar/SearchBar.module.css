@@ -1,0 +1,29 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	width: min(90%, 500px);
+}
+
+.search {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	border: 1px solid #fff;
+	border-radius: var(--radius);
+}
+
+.search > input {
+	width: 100%;
+	border: none;
+	outline: none;
+	padding: 8px 10px;
+	font-size: 12px;
+	background: none;
+	color: var(--white);
+}
+
+.search > input::placeholder {
+	color: var(--white);
+	opacity: 30%;
+}

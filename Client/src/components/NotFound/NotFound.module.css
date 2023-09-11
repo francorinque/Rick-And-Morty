@@ -1,0 +1,8 @@
+.wrapper {
+	background-color: #181818;
+	color: crimson;
+	height: 100vh;
+	display: grid;
+	place-content: center;
+	font-size: 50px;
+}
