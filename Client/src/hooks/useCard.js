@@ -8,6 +8,7 @@ export const useCard = ({ id, character }) => {
 
 	const dispatch = useDispatch()
 	const favorites = useSelector(state => state.favorites.favorites)
+	const loading = useSelector(state => state.characters.loading)
 	const { pathname } = useLocation()
 
 	let idToNumber = Number(id)
@@ -36,5 +37,5 @@ export const useCard = ({ id, character }) => {
 		dispatch(removeFav(id))
 	}
 
-	return { pathname, isFav, handleFavorite, handleClose }
+	return { pathname, isFav, handleFavorite, handleClose, loading }
 }

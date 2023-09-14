@@ -6,7 +6,7 @@ const postFav = (req, res) => {
 
 	if (!alreadyExists) {
 		myFavorites.push(character)
-		res.status(200).send(myFavorites) // [...]
+		res.status(201).send(myFavorites) // [...]
 	}
 }
 

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { FaArrowsTurnToDots, FaSistrix } from 'react-icons/fa6'
 import { useSelector, useDispatch } from 'react-redux'
-import axios from 'axios'
 import { addCharacter } from '../../redux/actions/actions.js'
 
 import style from './SearchBar.module.css'
@@ -17,16 +16,12 @@ export default function SearchBar() {
 			alert('Ya existe ese ID!')
 			return
 		} else {
-			axios(`http://localhost:3001/rickandmorty/character/${id}`)
-				.then(({ data }) => {
-					dispatch(addCharacter(data))
-				})
-				.catch(() => alert('¡No hay personajes con este ID!'))
+			dispatch(addCharacter(id))
 		}
 	}
 
 	const onSearchRandom = () => {
-		let randomId = Math.floor(Math.random() * 5)
+		let randomId = Math.floor(Math.random() * 820)
 		onSearch(randomId)
 	}
 

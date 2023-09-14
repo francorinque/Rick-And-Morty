@@ -10,6 +10,7 @@ specifiers:
   eslint-plugin-react-hooks: ^4.6.0
   eslint-plugin-react-refresh: ^0.4.3
   react: ^18.2.0
+  react-content-loader: ^6.2.1
   react-dom: ^18.2.0
   react-icons: ^4.10.1
   react-redux: ^8.1.2
@@ -22,6 +23,7 @@ specifiers:
 dependencies:
   axios: 1.4.0
   react: 18.2.0
+  react-content-loader: 6.2.1_react@18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.10.1_react@18.2.0
   react-redux: 8.1.2_waduhdonjnud5epszr7l5dd7zi
@@ -1865,6 +1867,15 @@ packages:
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
+
+  /react-content-loader/6.2.1_react@18.2.0:
+    resolution: {integrity: sha512-6ONbFX+Hi3SHuP66JB8CPvJn372pj+qwltJV0J8z/8MFrq98I1cbFdZuhDWeQXu3CFxiiDTXJn7DFxx2ZvrO7g==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16.0.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}

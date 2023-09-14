@@ -38,4 +38,11 @@
 	padding: 20px 0;
 	text-align: center;
 	background-color: var(--hover);
+	transition: color ease 200ms backdrop-filter ease 200ms;
+}
+
+.name:hover {
+	backdrop-filter: blur(2px);
+	color: var(--clr-accent);
+	transition: color ease 200ms backdrop-filter ease 200ms;
 }

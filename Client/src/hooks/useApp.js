@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 export const useApp = () => {
-	const [access, setAccess] = useState(false)
+	const [access, setAccess] = useState(true)
 
 	const navigate = useNavigate()
 	const { pathname } = useLocation()
@@ -17,9 +17,7 @@ export const useApp = () => {
 				`${URL}?email=${email}&password=${password}`
 			)
 			setAccess(data.access)
-			if (access) {
-				navigate('/home')
-			}
+			access && navigate('/home')
 		} catch (error) {
 			console.log(error)
 		}

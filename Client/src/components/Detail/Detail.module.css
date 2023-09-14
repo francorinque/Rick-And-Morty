@@ -27,7 +27,8 @@
 }
 
 .loader {
-	text-align: center;
+	width: max-content;
+	margin: 0 auto;
 }
 
 @media (min-width: 900px) {

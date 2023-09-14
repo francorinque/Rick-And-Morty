@@ -25,6 +25,7 @@ const useForm = ({ onLogin }) => {
 		onLogin(userData)
 	}
 
+	// maneja el disabled del boton
 	const handleDisabled = () => {
 		let disabled
 		for (let prop in errors) {
