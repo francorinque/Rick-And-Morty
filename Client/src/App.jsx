@@ -1,25 +1,24 @@
 import { Route, Routes } from 'react-router-dom'
+import { useApp } from './hooks/useApp'
 
-import Nav from './components/Nav/Nav'
-import NotFound from './components/NotFound/NotFound'
+import { Circle, Favorites, Form, Nav, NotFound } from './components'
+
+import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import DetailPage from './pages/DetailPage'
-
-import Circle from './components/Circle/Circle'
-import Form from './components/Form/Form'
-import { useApp } from './hooks/useApp'
-import HomePage from './pages/HomePage'
-import Favorites from './components/Favorites/Favorites'
+import Alert from './components/Alert/Alert'
 
 function App() {
 	const { pathname, logout, login } = useApp()
 
-	let layoutClass = pathname === '/' && 'notPadding'
+	let layoutClass =
+		(pathname === '/' || pathname.split('/').includes('detail')) && 'notPadding'
 
 	return (
 		<main className={`layout ${layoutClass}`}>
 			<Circle />
 			<Circle right />
+			<Alert />
 
 			{pathname !== '/' && <Nav onLogout={logout} />}
 

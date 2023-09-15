@@ -5,13 +5,16 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 
 import './index.css'
+import { AlertProvider } from './context/AlertContext'
 
 const container = document.getElementById('root')
 const root = ReactDOMClient.createRoot(container)
 root.render(
 	<Provider store={store}>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
+		<AlertProvider>
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
+		</AlertProvider>
 	</Provider>
 )

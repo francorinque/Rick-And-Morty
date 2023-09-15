@@ -2,9 +2,10 @@
 	width: 200px;
 	height: 200px;
 	background-color: var(--white);
+	background-color: var(--clr-accent);
 	border-radius: 50%;
 	filter: blur(100px);
-	opacity: 10%;
+	opacity: 50%;
 	position: absolute;
 
 	z-index: 98;

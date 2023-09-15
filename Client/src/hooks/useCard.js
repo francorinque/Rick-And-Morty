@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { addFav, deleteCharacter, removeFav } from '../redux/actions/actions'
+import { AlertContext } from '../context/AlertContext'
 
 export const useCard = ({ id, character }) => {
 	const [isFav, setIsFav] = useState(false)
+	const { setShowAlert } = useContext(AlertContext)
 
 	const dispatch = useDispatch()
 	const favorites = useSelector(state => state.favorites.favorites)
@@ -26,9 +28,13 @@ export const useCard = ({ id, character }) => {
 		if (isFav) {
 			setIsFav(false)
 			dispatch(removeFav(id))
+			setShowAlert({ showme: true, text: 'Eliminado' })
+			setTimeout(() => setShowAlert({ showme: false, text: '' }), 800)
 		} else {
 			setIsFav(true)
 			dispatch(addFav(character))
+			setShowAlert({ showme: true, text: 'Añadido' })
+			setTimeout(() => setShowAlert({ showme: false, text: '' }), 1000)
 		}
 	}
 

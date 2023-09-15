@@ -1,0 +1,28 @@
+.alert {
+	width: 80%;
+	border-radius: var(--radius);
+	padding: 10px 0;
+	background-color: var(--clr-accent);
+	color: var(--clr-bg-2);
+	font-weight: 700;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	text-align: center;
+	z-index: 98;
+	font-size: 20px;
+}
+
+.alert.showme {
+	opacity: 1;
+	visibility: visible;
+	transition: 200ms ease;
+	transform: translateY(0) translateX(-50%);
+}
+
+.alert.hidden {
+	opacity: 0;
+	visibility: hidden;
+	transition: 200ms ease;
+	transform: translateY(100px) translateX(-50%);
+}

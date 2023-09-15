@@ -1,13 +1,14 @@
 import { FaBars, FaUserMinus } from 'react-icons/fa6'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useNav } from '../../hooks/useNav'
 import rickyAndMortyLogo from '../../assets/Rick_and_morty_logo.png'
-import SearchBar from '../SearchBar/SearchBar'
 
 import style from './Nav.module.css'
+import SearchBar from '../SearchBar/SearchBar'
 
 const Nav = ({ onLogout }) => {
 	const { showMenu, scrolled, handleToggle, navLinks } = useNav()
+	const location = useLocation()
 	let activeLink = ({ isActive }) => (isActive ? style.active : '')
 
 	return (
@@ -36,8 +37,7 @@ const Nav = ({ onLogout }) => {
 					</button>
 				</div>
 			</div>
-
-			<SearchBar />
+			{!location.pathname.split('/').includes('detail') && <SearchBar />}
 		</nav>
 	)
 }

@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { clearFav, filterCards, orderCards } from '../../redux/actions/actions'
 import { useState } from 'react'
-import Cards from '../Cards/Cards'
 
 import style from './Favorites.module.css'
+import Cards from '../Cards/Cards'
 
 const Favorites = () => {
 	const [, setAux] = useState(false)
@@ -21,15 +21,20 @@ const Favorites = () => {
 		<section className={style.container}>
 			<div className={style.filters}>
 				<select onChange={handleOrder}>
-					<option value="A">Ascendente</option>
-					<option value="D">Descendente</option>
+					{['Ascendente', 'Descendente'].map((str, index) => (
+						<option value={str[0]} key={index}>
+							{str}
+						</option>
+					))}
 				</select>
 				<select onChange={handleFilter}>
-					<option value="All">All</option>
-					<option value="Male">Male</option>
-					<option value="Female">Female</option>
-					<option value="Genderless">Genderless</option>
-					<option value="unknown">unknown</option>
+					{['All', 'Male', 'Female', 'Genderless', 'unknow'].map(
+						(str, index) => (
+							<option value={str} key={index}>
+								{str}
+							</option>
+						)
+					)}
 				</select>
 				<button onClick={handleClearAll}>Clear all</button>
 			</div>

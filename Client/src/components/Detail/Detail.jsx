@@ -3,8 +3,6 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCharacterDetail } from '../../redux/actions/actions'
 
-import ContentLoader from 'react-content-loader'
-
 import style from './Detail.module.css'
 
 const Detail = () => {
@@ -22,28 +20,13 @@ const Detail = () => {
 		detail?.characterDetail
 
 	return detail.loading ? (
-		<div className={style.loader}>
-			<ContentLoader
-				speed={2}
-				width={800}
-				height={400}
-				viewBox="0 0 800 400"
-				backgroundColor="hsl(0, 0%, 35%, 40%)"
-				foregroundColor="hsl(0, 0%, 35%, 40%)"
-			>
-				<rect x="42" y="150" rx="3" ry="3" width="161" height="12" />
-				<rect x="40" y="101" rx="3" ry="3" width="177" height="13" />
-				<rect x="245" y="14" rx="3" ry="3" width="304" height="288" />
-				<rect x="43" y="174" rx="3" ry="3" width="161" height="12" />
-				<rect x="42" y="196" rx="3" ry="3" width="161" height="12" />
-				<rect x="42" y="127" rx="3" ry="3" width="161" height="12" />
-				<rect x="42" y="217" rx="3" ry="3" width="161" height="12" />
-			</ContentLoader>
+		<div className={style.loaderWrapper}>
+			<div className={style.loader}></div>
 		</div>
 	) : (
 		<div className={style.container}>
 			<div className={style.text}>
-				<h2>
+				<h2 className={style.name}>
 					<b>Name:</b> {name}
 				</h2>
 				<p>
