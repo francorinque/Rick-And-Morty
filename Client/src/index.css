@@ -26,14 +26,17 @@
 	--h-nav: 150px;
 }
 
-body {
+html {
 	font-family: 'Shlop';
-	letter-spacing: 2px;
+}
+
+body {
+	letter-spacing: 3px;
 	width: 100%;
 	min-height: 100vh;
 	position: relative;
 	color: var(--clr-text);
-	background: url('./assets/bg.jpg') no-repeat center/cover;
+	background: url('./assets/bg.webp') no-repeat center/cover;
 }
 
 body::after {

@@ -1,16 +1,16 @@
 import useForm from '../../hooks/useForm'
 
-import styledForm from './Form.module.css'
+import style from './Form.module.css'
 
-const Form = ({ onLogin }) => {
+const Form = ({ onLogin, isLoading }) => {
 	const { handleChange, handleSubmit, handleDisabled, errors, userData } =
 		useForm({ onLogin })
 
 	return (
-		<div className={styledForm.wrapper}>
-			<form onSubmit={handleSubmit} className={styledForm.form}>
+		<div className={style.wrapper}>
+			<form onSubmit={handleSubmit} className={style.form}>
 				{/* mail */}
-				<div className={styledForm.inputField}>
+				<div className={style.inputField}>
 					<input
 						type="email"
 						id="email"
@@ -19,12 +19,10 @@ const Form = ({ onLogin }) => {
 						name="email"
 						onChange={handleChange}
 					/>
-					{errors.email && (
-						<span className={styledForm.error}>{errors.email}</span>
-					)}
+					{errors.email && <span className={style.error}>{errors.email}</span>}
 				</div>
 				{/* password */}
-				<div className={styledForm.inputField}>
+				<div className={style.inputField}>
 					<input
 						type="password"
 						placeholder="Password"
@@ -33,15 +31,11 @@ const Form = ({ onLogin }) => {
 						onChange={handleChange}
 					/>
 					{errors.password && (
-						<span className={styledForm.error}>{errors.password}</span>
+						<span className={style.error}>{errors.password}</span>
 					)}
 				</div>
-				<button
-					type="submit"
-					disabled={handleDisabled()}
-					className={styledForm.btn}
-				>
-					Login
+				<button type="submit" disabled={handleDisabled()} className={style.btn}>
+					{isLoading ? <div className={style.loader}></div> : 'Login'}
 				</button>
 			</form>
 		</div>

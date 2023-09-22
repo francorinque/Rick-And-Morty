@@ -24,17 +24,25 @@ export const useCard = ({ id, character }) => {
 		// eslint-disable-next-line
 	}, [favorites])
 
+	const handleAlert = isFav => {
+		if (isFav) {
+			setShowAlert({ showme: true, text: 'Eliminado' })
+			setTimeout(() => setShowAlert({ showme: false, text: '' }), 800)
+		} else {
+			setShowAlert({ showme: true, text: 'Añadido' })
+			setTimeout(() => setShowAlert({ showme: false, text: '' }), 1000)
+		}
+	}
+
 	const handleFavorite = () => {
 		if (isFav) {
 			setIsFav(false)
 			dispatch(removeFav(id))
-			setShowAlert({ showme: true, text: 'Eliminado' })
-			setTimeout(() => setShowAlert({ showme: false, text: '' }), 800)
+			handleAlert(isFav)
 		} else {
 			setIsFav(true)
 			dispatch(addFav(character))
-			setShowAlert({ showme: true, text: 'Añadido' })
-			setTimeout(() => setShowAlert({ showme: false, text: '' }), 1000)
+			handleAlert(isFav)
 		}
 	}
 

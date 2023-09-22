@@ -9,6 +9,7 @@
 	position: absolute;
 
 	z-index: 98;
+	animation: c ease 3s infinite alternate;
 }
 
 .positionLeft {
@@ -18,4 +19,14 @@
 .positionRight {
 	bottom: 0;
 	right: 0;
+}
+
+@keyframes c {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 0.8;
+	}
 }

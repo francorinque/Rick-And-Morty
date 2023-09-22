@@ -4,12 +4,14 @@ import axios from 'axios'
 
 export const useApp = () => {
 	const [access, setAccess] = useState(true)
+	const [isLoading, setIsLoading] = useState(false)
 
 	const navigate = useNavigate()
 	const { pathname } = useLocation()
 
 	async function login(userData) {
 		try {
+			setIsLoading(true)
 			const { email, password } = userData
 			const URL = 'http://localhost:3001/rickandmorty/login'
 
@@ -20,6 +22,8 @@ export const useApp = () => {
 			access && navigate('/home')
 		} catch (error) {
 			console.log(error)
+		} finally {
+			setIsLoading(false)
 		}
 	}
 
@@ -36,5 +40,6 @@ export const useApp = () => {
 		pathname,
 		logout,
 		login,
+		isLoading,
 	}
 }

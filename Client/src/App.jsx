@@ -9,7 +9,7 @@ import DetailPage from './pages/DetailPage'
 import Alert from './components/Alert/Alert'
 
 function App() {
-	const { pathname, logout, login } = useApp()
+	const { pathname, logout, login, isLoading } = useApp()
 
 	let layoutClass =
 		(pathname === '/' || pathname.split('/').includes('detail')) && 'notPadding'
@@ -23,7 +23,10 @@ function App() {
 			{pathname !== '/' && <Nav onLogout={logout} />}
 
 			<Routes>
-				<Route path="/" element={<Form onLogin={login} />} />
+				<Route
+					path="/"
+					element={<Form onLogin={login} isLoading={isLoading} />}
+				/>
 				<Route path="/home" element={<HomePage />} />
 				<Route path="/favorites" element={<Favorites />} />
 				<Route path="/about" element={<AboutPage />} />
